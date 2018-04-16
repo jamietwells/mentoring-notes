@@ -1,0 +1,23 @@
+C# Language
+
+    Syntax, methods, classes, namespaces
+    Modifiers
+    Loops, enumerables
+    Control flow
+    Exception handling
+
+OOP Principles
+
+    Types (structs vs classes)
+    Inheritance (inclusing virtual, abstract)
+    Interfaces
+    Generics
+
+Advanced Features
+
+    Delegates and events
+    Lambdas
+    Yield
+    Reflection
+    Linq
+    Async and await (vs concurency)
