@@ -1,6 +1,7 @@
 C# Language
 
     Syntax, methods, classes, namespaces
+    Scope
     Modifiers
     Loops, enumerables
     Control flow
@@ -12,6 +13,7 @@ OOP Principles
     Inheritance (inclusing virtual, abstract)
     Interfaces
     Generics
+    Static
 
 Advanced Features
 
