@@ -1,0 +1,200 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage[most]{tcolorbox}
+\lstloadlanguages{C,C++,csh,Java}
+
+\definecolor{identifier}{rgb}{0, 0.68, 0.68}
+\definecolor{string}{rgb}{0.75,0,0.2}
+\definecolor{comment}{rgb}{0, 0.718, 0.059}
+\definecolor{keyword}{rgb}{0.29, 0.59, 0.82}
+\definecolor{background}{rgb}{0.07, 0.09, 0.1}
+\definecolor{nonKeywords}{rgb}{0.95,0.95,0.95}
+\definecolor{captionBox}{rgb}{0.2,0.2,0.2}
+
+\newtcolorbox{titleBox}[2][]{%
+  attach boxed title to top center= {yshift=-8pt},
+  colback = black,
+  colframe = black,
+  fonttitle = \bfseries,
+  colbacktitle = white,
+  coltitle = black,
+  title = #2,#1,
+  enhanced,
+}
+
+\lstset{
+language=csh,
+basicstyle=\footnotesize\ttfamily\color{nonKeywords},
+numbers=left,
+numberstyle=\tiny,
+numbersep=5pt,
+tabsize=2,
+extendedchars=true,
+breaklines=true,
+frame=tb,
+stringstyle=\color{string}\ttfamily,
+showspaces=false,
+showtabs=false,
+xleftmargin=17pt,
+framexleftmargin=17pt,
+framexrightmargin=5pt,
+framexbottommargin=4pt,
+framextopmargin=4pt,
+commentstyle=\color{comment},
+morecomment=[l]{//}, %use comment-line-style!
+morecomment=[s]{/*}{*/}, %for multiline comments
+showstringspaces=false,
+morekeywords={ var, abstract, event, new, struct, as, explicit, null, switch, base, extern, object, this, bool, false, operator, throw, break, finally, out, true, byte, fixed, override, try, case,
+float, params, typeof, catch, for, private, uint, char, foreach, protected, ulong, checked, goto, public, unchecked, class, if, readonly, unsafe, const, implicit, ref, ushort, continue, in, return,
+using, decimal, int, sbyte, virtual, default, interface, sealed, volatile, delegate, internal, short, void, do, is, sizeof, while, double, lock, stackalloc, else, long, static, enum, namespace, string},
+keywordstyle=\color{keyword},
+identifierstyle=\color{identifier},
+backgroundcolor=\color{background},
+}
+
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{captionBox}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\begin{document}
+
+\section{Syntax}
+
+\subsection{Task}
+Create a program to find all the factors of any positive integer.
+
+\begin{titleBox}[colback=white]{Example}
+\begin{verbatim}
+Input: 12
+Output: 1, 2, 3, 4, 6, 12
+
+Input: 7
+Output: 1, 7
+
+Input: 16
+Output: 1, 2, 4, 8, 16
+\end{verbatim}
+\end{titleBox}
+
+\subsection{Task}
+Expand the program to calculate the highest common factor between two numbers
+
+\begin{titleBox}[colback=white]{Example}
+\begin{verbatim}
+Input: 12, 16
+Output: 4
+
+Input: 7, 15
+Output: 1
+\end{verbatim}
+\end{titleBox}
+
+\subsection{Notes}
+This session focused on becoming comfortable with syntax. You should be comfortable with the correct syntax for classes, methods, fields, and other members.
+
+\begin{lstlisting}[language={[Sharp]C}, title={Creating a class}, label={Script}]
+public class MyClass {
+   ...
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language={[Sharp]C}, title={Creating properties}, label={Script}]
+public class MyClass {
+   public int MyProperty { get; set; } 
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language={[Sharp]C}, title={Creating fields}, label={Script}]
+public class MyClass {
+   private int MyField; 
+}
+\end{lstlisting}
+
+You should also be comfortable calling methods and refering to variables and properties in the code, as well as declaring variables.
+
+\begin{lstlisting}[language={[Sharp]C}, title={Declaring variables}, label={Script}]
+public class MyClass {
+  public static int AddNumbers(int first, int second) {
+    var result = first + second;
+    return result;
+  }
+}
+\end{lstlisting}
+
+We also looked at creating Lists and looping through lists.
+
+\begin{lstlisting}[language={[Sharp]C}, title={Creating a list and adding items to it}, label={Script}]
+public class MyClass {
+  public static List<int> GetNumbersFrom1To5() {
+    // Make list
+    var numbers = new List<int>();
+
+    // populate list with values
+    numbers.Add(1);
+    numbers.Add(2);
+    numbers.Add(3);
+    numbers.Add(4);
+    numbers.Add(5);
+    
+    // return list to the caller of this method
+    return numbers;	
+  }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language={[Sharp]C}, title={Looping over a list}, label={Script}]
+public class MyClass {
+  public static void PrintAllInList() {
+    var numbers = GetNumbersFrom1To5(); // method from above
+    foreach(var number in numbers) {
+      Console.WriteLine(number);
+    }
+  }
+}
+\end{lstlisting}
+
+
+\section{Object oriented programming}
+
+\subsection{Task}
+Create a program to store detals about school courses, and list them all, when requested.
+
+\begin{titleBox}[colback=white]{Example}
+\begin{verbatim}
+Input: 1
+
+Output: 
+1. List all courses
+2. Search for student
+
+All Courses:
+    Core:
+        Astronomy
+        Charms
+        Defence Against the Dark Arts
+        Flying
+        Herbology
+        History of Magic
+        Potions
+        Transfiguration
+
+    Optional:
+        Alchemy
+        Apparition
+        Arithmancy
+        Care of Magical Creatures
+        Divination
+        Study of Ancient Runes
+
+    Extra Curricular:
+        Advanced Arithmancy Studies
+        Ancient Studies
+        Magical Theory
+        Orchestra
+\end{verbatim}
+\end{titleBox}
+
+\end{document}
